@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import jspdf from 'jspdf'
 import "jspdf-autotable"
 
-
 export default function AddInventory() {
 
+    axios.defaults.withCredentials=true;
     const [inventory, setinventory] = useState([]);
 
     //fetching all the inventory rows from the database
@@ -58,13 +58,11 @@ export default function AddInventory() {
         doc.save(`Inventory_report_${dateStr}.pdf`);
     };
 
-
-
     return (
         <div className="display-box">
             <div className="header-box">
                 <div>Inventory<button id="generate-reportt-btn" onClick={() => generatePDF(inventory)}>Create Report</button></div>
-
+                
                 <div className="total-inventory-display">
                     <span id="total-inventory-display-total">{inventory.length}</span> <br />
                     <span id="total-inventory-display-text">Total Inventory</span>

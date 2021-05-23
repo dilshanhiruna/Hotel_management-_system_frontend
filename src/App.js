@@ -24,7 +24,7 @@ function App() {
     <div>
         <Router>
           <Switch>
-         
+            
             <Route exact path="/managerLogin" component={ManagerLogin} />
             <Route  path="/emp-manager" component={employeeManager} />
             <Route  path="/front-office-manager" component={frontOfficeComp} />

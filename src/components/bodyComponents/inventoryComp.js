@@ -15,8 +15,8 @@ import Header from '../Header';
 export default function inventoryComp() {
 
     return (
-
         <Router>
+            
             <head>
                 <title>Inventory Management</title>
             </head>
@@ -27,7 +27,7 @@ export default function inventoryComp() {
                 <Sidenav />
 
                 <div className="block">
-
+ 
                     <Route path="/inventory-manager/addinventory" exact component={AddInventory} />
                     <Route path="/inventory-manager" exact component={InventoryList} />
                     <Route path="/inventory-manager/displayinventory/:id" exact component={DisplayInventory} />
@@ -37,7 +37,6 @@ export default function inventoryComp() {
                     <Route path="/inventory-manager/checkout" exact component={InventoryCheckout} />
 
                 </div>
-
             </div>
             <Footer />
         </Router>
