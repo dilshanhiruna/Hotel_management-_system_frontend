@@ -23,7 +23,7 @@ function ViewOne() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/Travel_Agency/find/${id}`).then((res) => {
+        axios.get(`https://hotel-sobana.herokuapp.com/Travel_Agency/find/${id}`).then((res) => {
             setOneAgent(res.data);
             setContract_id(res.data.contract_id);
             setName(res.data.name);
@@ -56,7 +56,7 @@ function ViewOne() {
 
         const result = window.confirm("Confirm?");
         if (result == true) {
-            axios.put(`http://localhost:5000/Travel_Agency/update/${id}`, newAgencies).then((res) => {
+            axios.put(`https://hotel-sobana.herokuapp.com/Travel_Agency/update/${id}`, newAgencies).then((res) => {
                 alert("Update Success")
                
             }).catch(() => {

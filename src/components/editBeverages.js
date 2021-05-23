@@ -24,7 +24,7 @@ const EditBeverages = () => {
     useEffect(() => {
       
         //fetching supplier data from DB
-        axios.get("http://localhost:5000/supplier/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/supplier/").then((res) => {
             if (res.data.length > 0) {
                 setgetSupplier(res.data.map(supplier => supplier.name))
             }
@@ -32,7 +32,7 @@ const EditBeverages = () => {
             console.log(e);
         })
         //fetching inventory data from DB
-        axios.get(`http://localhost:5000/barInventory/get/${id}`).then(res => {
+        axios.get(`https://hotel-sobana.herokuapp.com/barInventory/get/${id}`).then(res => {
             setBarData(res.data)
             setbarID(res.data.item_id)
             setname(res.data.name)
@@ -62,7 +62,7 @@ const EditBeverages = () => {
             item_id, name, category, supplier, quantity, restocklevel, unitPrice, date
         }
 
-        axios.put(`http://localhost:5000/barInventory/update/${id}`, newItem).then(() => {
+        axios.put(`https://hotel-sobana.herokuapp.com/barInventory/update/${id}`, newItem).then(() => {
 
         }).catch((e) => {
             alert("error");
@@ -83,7 +83,7 @@ const EditBeverages = () => {
         timesClicked++;
         
         if (timesClicked > 1) {
-            axios.delete(`http://localhost:5000/barInventory/delete/${id}`).then(() => {
+            axios.delete(`https://hotel-sobana.herokuapp.com/barInventory/delete/${id}`).then(() => {
                 window.location = "/bar-manager"
                 timesClicked=0
             }).catch((e) => {

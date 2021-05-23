@@ -19,7 +19,7 @@ const SuppliersView = () => {
 
     useEffect(() => {
         //fetching the supplier object that matching with the ID from the DB
-        axios.get(`http://localhost:5000/supplier/get/${id}`).then((res) => {
+        axios.get(`https://hotel-sobana.herokuapp.com/supplier/get/${id}`).then((res) => {
 
             setsuppliers(res.data.supplier)
 
@@ -52,7 +52,7 @@ const SuppliersView = () => {
         }
         else {
 
-            axios.put(`http://localhost:5000/supplier/update/${id}`, newSupplier).then(() => {
+            axios.put(`https://hotel-sobana.herokuapp.com/supplier/update/${id}`, newSupplier).then(() => {
 
                 window.location = "/inventory-manager/suppliers"
     
@@ -71,7 +71,7 @@ const SuppliersView = () => {
 
         if (timesClicked > 1) { //if button click is more than one - delete supplier
 
-            axios.delete(`http://localhost:5000/supplier/delete/${id}`).then(() => {
+            axios.delete(`https://hotel-sobana.herokuapp.com/supplier/delete/${id}`).then(() => {
                 window.location = "/inventory-manager/suppliers"
                 timesClicked=0
             }).catch((e) => {

@@ -15,7 +15,7 @@ const AddCategory = (props) => {
 
 
     useEffect(() => {
-        axios.get("http://localhost:5000/category/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/category/").then((res) => {
             if (res.data.length > 0) {
                 setgetCategory(res.data.map(category => category.name))
             }
@@ -32,7 +32,7 @@ const AddCategory = (props) => {
             name
         }
         if (name.trim().length > 0) {
-            axios.post(" http://localhost:5000/category/add", newCat).then(() => {
+            axios.post(" https://hotel-sobana.herokuapp.com/category/add", newCat).then(() => {
                 setnewcategory("");
 
             }).catch((e) => {
@@ -47,7 +47,7 @@ const AddCategory = (props) => {
     function deleteCategory(e) {
         e.preventDefault();
 
-        axios.delete(`http://localhost:5000/category/delete/${catname}`).then(() => {
+        axios.delete(`https://hotel-sobana.herokuapp.com/category/delete/${catname}`).then(() => {
             setcategory("");
             document.getElementById('new-cat-input').setAttribute("defaultValue", "")
 

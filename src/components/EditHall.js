@@ -22,7 +22,7 @@ export default function EditHall() {
     useEffect(() => {
     
      
-        axios.get(`http://localhost:5000/halls/get/${id}`).then(res => {
+        axios.get(`https://hotel-sobana.herokuapp.com/halls/get/${id}`).then(res => {
             sethallData(res.data.Hall)
             setID(res.data.Hall.id)
             setname(res.data.Hall.name)
@@ -53,7 +53,7 @@ export default function EditHall() {
             hallid, name, type, maxSeats, maxTables, features, state, price
         }
 
-        axios.put(`http://localhost:5000/halls/update/${id}`, newHall).then(() => {
+        axios.put(`https://hotel-sobana.herokuapp.com/halls/update/${id}`, newHall).then(() => {
 
         }).catch((e) => {
             alert("error");
@@ -69,7 +69,7 @@ export default function EditHall() {
         timesClicked++;
         
         if (timesClicked > 1) {
-            axios.delete(`http://localhost:5000/halls/delete/${id}`).then(() => {
+            axios.delete(`https://hotel-sobana.herokuapp.com/halls/delete/${id}`).then(() => {
                 window.location = "/hall-manager"
                 timesClicked=0
             }).catch((e) => {

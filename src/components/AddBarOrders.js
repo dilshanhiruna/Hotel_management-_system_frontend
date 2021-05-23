@@ -36,14 +36,14 @@ export default function AddBarOrders() {
                 order_no,total_amount,discount,customer_nic
             }
     
-            axios.post(" http://localhost:5000/orderItems/add", newItem).then(() => {
+            axios.post(" https://hotel-sobana.herokuapp.com/orderItems/add", newItem).then(() => {
     
                 window.location = "/viewbarorders"
     
             }).catch((e) => {
                 alert("error");
             })
-            axios.post(" http://localhost:5000/barOrders/add", newItem2).then(() => {
+            axios.post(" https://hotel-sobana.herokuapp.com/barOrders/add", newItem2).then(() => {
     
                 window.location = "/viewfinalorder"
     
@@ -54,7 +54,7 @@ export default function AddBarOrders() {
         }
     //fetching all the barorders rows from the database
     useEffect(() => {
-        axios.get("http://localhost:5000/orderItems/retrieve").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/orderItems/retrieve").then((res) => {
             if (res.data.length > 0) {
                 setorderitems(res.data);
             }

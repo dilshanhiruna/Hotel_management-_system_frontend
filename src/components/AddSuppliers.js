@@ -25,7 +25,7 @@ const AddSuppliers = ({ supPOP }) => {
         }
         else {
 
-            axios.post(" http://localhost:5000/supplier/add", newSupplier).then(() => {
+            axios.post(" https://hotel-sobana.herokuapp.com/supplier/add", newSupplier).then(() => {
 
                 window.location = "/inventory-manager/suppliers"
 

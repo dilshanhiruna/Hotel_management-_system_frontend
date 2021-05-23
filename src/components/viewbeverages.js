@@ -9,7 +9,7 @@ export default function ViewBeverages() {
 
     //fetching all the barinventory rows from the database
     useEffect(() => {
-        axios.get("http://localhost:5000/barInventory/retrieve").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/barInventory/retrieve").then((res) => {
             if (res.data.length > 0) {
                 setbarinventory(res.data);
             }

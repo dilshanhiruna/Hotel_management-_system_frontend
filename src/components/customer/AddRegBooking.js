@@ -51,7 +51,7 @@ const AddRegBooking = ({setTestVal}) => {
     //getting room types from the database
     useEffect(() => {
  
-        axios.get("http://localhost:5000/roomType/get").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/roomType/get").then((res) => {
             if (res.data.length > 0) {
                 setgetRooms(res.data.map(roomAllocation => roomAllocation.typeName))
 
@@ -72,7 +72,7 @@ const AddRegBooking = ({setTestVal}) => {
     // const [allRooms, setAllRooms] = useState([]);
 
     // async function getAllRooms(){
-    //     const roomRes = await axios.get("http://localhost:5000/roomType/get");
+    //     const roomRes = await axios.get("https://hotel-sobana.herokuapp.com/roomType/get");
     //     setAllRooms(roomRes.data);
         
     // }
@@ -226,7 +226,7 @@ const AddRegBooking = ({setTestVal}) => {
                 price,
             }
 
-            axios.post("http://localhost:5000/booking/addR", newBooking).then(()=>{
+            axios.post("https://hotel-sobana.herokuapp.com/booking/addR", newBooking).then(()=>{
                 alert("Booking Added")
             }).catch((err)=>{
                 alert("Error with adding Booking")

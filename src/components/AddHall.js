@@ -22,7 +22,7 @@ export default function AddHall() {
             id, name, type, maxSeats, maxTables, features, state, price
         }
 
-        axios.post(" http://localhost:5000/halls/add", newHall).then(() => {
+        axios.post(" https://hotel-sobana.herokuapp.com/halls/add", newHall).then(() => {
             
 
             window.location = "/hall-manager"

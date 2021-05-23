@@ -19,7 +19,7 @@ const AddRoomType = ({rtPOP}) => {
             typeName, capacity, AC, FullBoardPrice, HalfBoardPrice, BedAndBreakfastPrice
         }
 
-        axios.post(" http://localhost:5000/roomType/add", newRoomType).then(() => {
+        axios.post(" https://hotel-sobana.herokuapp.com/roomType/add", newRoomType).then(() => {
 
             window.location = "/roomType"
 

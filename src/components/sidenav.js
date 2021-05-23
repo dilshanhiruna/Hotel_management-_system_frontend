@@ -8,7 +8,7 @@ export default function Sidenav() {
     const [inventory, setinventory] = useState([]);
 
     useEffect(() => { //fectching all inventory data from the DB
-        axios.get("http://localhost:5000/inventory/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/inventory/").then((res) => {
             if (res.data.length > 0) {
                 setinventory(res.data);
                 //filtering inventory array to contain only inventory want to be restocked

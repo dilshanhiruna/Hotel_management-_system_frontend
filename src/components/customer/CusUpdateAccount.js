@@ -32,7 +32,7 @@ const UpdateAccount = () => {
             fname, lname, address, NIC, nationality, passportNo, email, contact, password, passwordVerify
         }
 
-        axios.post(`http://localhost:5000/customer/update`, updateAccount).then(() => {
+        axios.post(`https://hotel-sobana.herokuapp.com/customer/update`, updateAccount).then(() => {
             window.location = "/CusSideNav/cusMyaccount"
         }).catch((e) => {
             alert("Please Verify Your Password");
@@ -46,7 +46,7 @@ const UpdateAccount = () => {
         timesClicked++;
         
         if (timesClicked > 1) {
-            axios.delete(`http://localhost:5000/customer/delete`).then(() => {
+            axios.delete(`https://hotel-sobana.herokuapp.com/customer/delete`).then(() => {
                 window.location = "/CusSideNav/cusLogout"
                 timesClicked=0
             }).catch((e) => {
@@ -63,7 +63,7 @@ const UpdateAccount = () => {
 
 
     async function getMyAccount(){
-        const myAccountRes = await axios.get("http://localhost:5000/customer/get");
+        const myAccountRes = await axios.get("https://hotel-sobana.herokuapp.com/customer/get");
         
         setMyAccount(myAccountRes.data);
         // setFname(myAccountRes.data.fname);

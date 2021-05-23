@@ -20,7 +20,7 @@ const UpdateAndDeleteRoom = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:5000/room/get/${id}`).then((res) => {
+        axios.get(`https://hotel-sobana.herokuapp.com/room/get/${id}`).then((res) => {
            
                 setroom(res.data)
                 console.log(res.data)
@@ -38,7 +38,7 @@ const UpdateAndDeleteRoom = () => {
          
         })
 // fetching room types from the DB
-        axios.get(`http://localhost:5000/roomType/get/`).then((res) => {
+        axios.get(`https://hotel-sobana.herokuapp.com/roomType/get/`).then((res) => {
             setgetroomtype(res.data.map(roomType => roomType.typeName))
 
         }).catch((e1) => {
@@ -58,7 +58,7 @@ const UpdateAndDeleteRoom = () => {
             roomNo, type, buildingNo, floorNum, specialDetails
         }
 
-        axios.put(`http://localhost:5000/room/update/${id}`, newRoom).then(() => {
+        axios.put(`https://hotel-sobana.herokuapp.com/room/update/${id}`, newRoom).then(() => {
 
             window.location = "/room-manager"
 
@@ -75,7 +75,7 @@ const UpdateAndDeleteRoom = () => {
         
         if (timesClicked > 1) {
 
-            axios.delete(`http://localhost:5000/room/delete/${id}`).then(() => {
+            axios.delete(`https://hotel-sobana.herokuapp.com/room/delete/${id}`).then(() => {
                 window.location = "/room-manager"
             }).catch((e) => {
     

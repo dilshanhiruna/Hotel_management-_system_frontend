@@ -12,7 +12,7 @@ function ViewBookingRequsets() {
 
     useEffect(() => {
         function ViewRequest() {
-            axios.get("http://localhost:5000/booking/ViewHistry").then((res) => {
+            axios.get("https://hotel-sobana.herokuapp.com/booking/ViewHistry").then((res) => {
                 setRequest(res.data);
             }).catch((err) => {
                 alert(err);

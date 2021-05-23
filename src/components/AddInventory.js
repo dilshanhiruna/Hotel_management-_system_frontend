@@ -24,7 +24,7 @@ export default function AddInventory() {
 
     useEffect(() => {
  
-        axios.get("http://localhost:5000/category/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/category/").then((res) => {
             if (res.data.length > 0) {
                 setgetCategory(res.data.map(category => category.name))
             }
@@ -32,7 +32,7 @@ export default function AddInventory() {
             // console.log(e);
         },)
 
-        axios.get("http://localhost:5000/supplier/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/supplier/").then((res) => {
             if (res.data.length > 0) {
                 setgetSupplier(res.data.map(supplier => supplier.name))
             }
@@ -52,7 +52,7 @@ export default function AddInventory() {
             inventoryID, name, model, sku, category, supplier, description, mesurement, quantity, restock_level, original_price, date
         }
 
-        axios.post(" http://localhost:5000/inventory/add", newItem).then(() => {
+        axios.post(" https://hotel-sobana.herokuapp.com/inventory/add", newItem).then(() => {
 
             window.location = "/inventory-manager"
 

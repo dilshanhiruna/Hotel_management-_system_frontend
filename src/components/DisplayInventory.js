@@ -28,7 +28,7 @@ const DisplayInventory = () => {
 
     useEffect(() => {
         //fetching category data from DB
-        axios.get("http://localhost:5000/category/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/category/").then((res) => {
             if (res.data.length > 0) {
                 setgetCategory(res.data.map(category => category.name))
             }
@@ -36,7 +36,7 @@ const DisplayInventory = () => {
             console.log(e);
         })
         //fetching supplier data from DB
-        axios.get("http://localhost:5000/supplier/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/supplier/").then((res) => {
             if (res.data.length > 0) {
                 setgetSupplier(res.data.map(supplier => supplier.name))
             }
@@ -44,7 +44,7 @@ const DisplayInventory = () => {
             console.log(e);
         })
         //fetching inventory data from DB
-        axios.get(`http://localhost:5000/inventory/get/${id}`).then(res => {
+        axios.get(`https://hotel-sobana.herokuapp.com/inventory/get/${id}`).then(res => {
             setgetInventory(res.data.item)
             //setting the data that is fetched from the database 
             setname(res.data.item.name)
@@ -74,7 +74,7 @@ const DisplayInventory = () => {
             name, model, sku, category, supplier, description, mesurement, quantity, restock_level, original_price, date
         }
 
-        axios.put(`http://localhost:5000/inventory/update/${id}`, newItem).then(() => {
+        axios.put(`https://hotel-sobana.herokuapp.com/inventory/update/${id}`, newItem).then(() => {
 
             document.getElementById('update_successful').style.display = "block ";
           
@@ -98,7 +98,7 @@ const DisplayInventory = () => {
         timesClicked++;
         
         if (timesClicked > 1) {//if button click is more than one - delete inventory
-            axios.delete(`http://localhost:5000/inventory/delete/${id}`).then(() => {
+            axios.delete(`https://hotel-sobana.herokuapp.com/inventory/delete/${id}`).then(() => {
                 window.location = "/inventory-manager"
                 timesClicked=0
             }).catch((e) => {

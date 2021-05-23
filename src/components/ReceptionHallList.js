@@ -11,7 +11,7 @@ export default function HallList() {
 
     //fetching all the reception hall rows from the database
     useEffect(() => {
-        axios.get("http://localhost:5000/halls/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/halls/").then((res) => {
             if (res.data.length > 0) {
                 setinventory(res.data);
             }

@@ -13,7 +13,7 @@ function ViewAll() {
     useEffect(() => {
         function getVacations() {
             console.log("sucess");
-            axios.get("http://localhost:5000/vacation//Allvacations").then((res) => {
+            axios.get("https://hotel-sobana.herokuapp.com//Allvacations").then((res) => {
                 setVacation(res.data);
                 
             }).catch((err) => {

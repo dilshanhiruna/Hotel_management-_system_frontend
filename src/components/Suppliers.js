@@ -17,7 +17,7 @@ const Suppliers = () => {
 
     useEffect(() => {
         //fetiching all supplier data from the database
-        axios.get("http://localhost:5000/supplier/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/supplier/").then((res) => {
             if (res.data.length > 0) {
                 setsuppliers(res.data);
             }
@@ -45,7 +45,7 @@ const Suppliers = () => {
             name, description, contact, email, location
         }
 
-        axios.put(`http://localhost:5000/supplier/update/${sup._id}`, newSupplier).then(() => {
+        axios.put(`https://hotel-sobana.herokuapp.com/supplier/update/${sup._id}`, newSupplier).then(() => {
 
             // window.location = "/inventory"
 
@@ -57,7 +57,7 @@ const Suppliers = () => {
 
     function deleteData(id, e) { //delete supplier
         e.preventDefault();
-        axios.delete(`http://localhost:5000/supplier/delete/${id}`).then(() => {
+        axios.delete(`https://hotel-sobana.herokuapp.com/supplier/delete/${id}`).then(() => {
             // window.location = "/inventory"
         }).catch((e) => {
 

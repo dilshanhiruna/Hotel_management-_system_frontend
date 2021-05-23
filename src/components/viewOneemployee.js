@@ -26,7 +26,7 @@ function ViewOne() {
     // console.log("find");
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/employee/get/${id}`).then((res) => {
+        axios.get(`https://hotel-sobana.herokuapp.com/employee/get/${id}`).then((res) => {
             setOneEmployee(res.data);
             setFname(res.data.fname);
             setLname(res.data.lname);
@@ -73,7 +73,7 @@ function ViewOne() {
 
         const result = window.confirm("Confirm?");
         if (result == true) {
-            axios.put(`http://localhost:5000/employee/update/${id}`, newEmployee).then(() => {
+            axios.put(`https://hotel-sobana.herokuapp.com/employee/update/${id}`, newEmployee).then(() => {
             window.location = "/emp-manager"
             }).catch(() => {
                 alert("User Id Duplicated!!!!");

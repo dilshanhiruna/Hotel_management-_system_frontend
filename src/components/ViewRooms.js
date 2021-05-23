@@ -13,7 +13,7 @@ export default function ViewRoom() {
 
     //fetching all the inventory rows from the database
     useEffect(() => {
-        axios.get("http://localhost:5000/room/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/room/").then((res) => {
             if (res.data.length > 0) {
                 setrooms(res.data);
             }

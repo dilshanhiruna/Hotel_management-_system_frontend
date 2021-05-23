@@ -24,7 +24,7 @@ function Addvacation() {
         
         }
 
-        axios.post("http://localhost:5000/vacation/addvacation", newVacation).then(() => {
+        axios.post("https://hotel-sobana.herokuapp.com/vacation/addvacation", newVacation).then(() => {
             window.location = "/#"
             alert("Vacation Request Created");
         }).catch((err) => {

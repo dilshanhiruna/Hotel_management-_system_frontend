@@ -13,7 +13,7 @@ function Delete() {
             const result = window.confirm("Do you really want to Delete?");
             if (result == true) {
 
-                axios.delete(`http://localhost:5000/employee/delete/${id}`).then((res) => {
+                axios.delete(`https://hotel-sobana.herokuapp.com/employee/delete/${id}`).then((res) => {
                     window.location = "/Viewall";
                     alert("Delete Success");
                 }).catch(() => {

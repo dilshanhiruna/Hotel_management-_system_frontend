@@ -22,7 +22,7 @@ export default function AddRoom(){
         specialDetails
      }
 
-     axios.post("http://localhost:5000/room/add",newRoom).then(()=>{
+     axios.post("https://hotel-sobana.herokuapp.com/room/add",newRoom).then(()=>{
 
          window.location = "/room-manager"
          

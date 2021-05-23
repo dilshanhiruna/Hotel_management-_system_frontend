@@ -50,7 +50,7 @@ function AddEmployees() {
 
         }
 
-        axios.post("http://localhost:5000/employee/addemployee", newEmployee).then(() => {
+        axios.post("https://hotel-sobana.herokuapp.com/employee/addemployee", newEmployee).then(() => {
             window.location = "/allemployees"
             alert("Employee Added To Database Successfuly");
         }).catch((err) => {

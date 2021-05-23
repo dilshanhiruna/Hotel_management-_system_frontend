@@ -8,7 +8,7 @@ const BarReStock = () => {
 
 
     useEffect(() => {
-        axios.get("http://localhost:5000/barInventory/retrieve").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/barInventory/retrieve").then((res) => {
             if (res.data.length > 0) {
                 setbarinventory(res.data);
             }
@@ -24,7 +24,7 @@ const BarReStock = () => {
 
     //     const total = parseInt(quantity) + parseInt(newStock);
     //     const newStockvalue = { total };
-    //     axios.put(`http://localhost:5000/inventory/updatestock/${id}`, newStockvalue).then(() => {
+    //     axios.put(`https://hotel-sobana.herokuapp.com/inventory/updatestock/${id}`, newStockvalue).then(() => {
 
     //     }).catch((e) => {
     //         alert("error");

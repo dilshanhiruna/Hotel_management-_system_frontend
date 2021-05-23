@@ -22,7 +22,7 @@ const MyAccount = () => {
     // const [passwordVerify, setPasswordVerify] = useState("");
 
     async function getMyAccount(){
-        const myAccountRes = await axios.get("http://localhost:5000/customer/get");
+        const myAccountRes = await axios.get("https://hotel-sobana.herokuapp.com/customer/get");
         
         setMyAccount(myAccountRes.data);
         // setFname(myAccountRes.data.fname);

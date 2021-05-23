@@ -30,7 +30,7 @@ const Login = () => {
                 
             };
 
-            await axios.post("http://localhost:5000/customer/login", loginData);
+            await axios.post("https://hotel-sobana.herokuapp.com/customer/login", loginData);
             await getLoggedIn();
             history.push("/");
 

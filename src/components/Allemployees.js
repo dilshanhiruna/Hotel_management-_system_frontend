@@ -12,7 +12,7 @@ function ViewAll() {
     useEffect(() => {
         function getEmployee() {
             console.log("sucess");
-            axios.get("http://localhost:5000/employee//Retrieve").then((res) => {
+            axios.get("https://hotel-sobana.herokuapp.com/employee//Retrieve").then((res) => {
                 setEmployee(res.data);
                 
             }).catch((err) => {

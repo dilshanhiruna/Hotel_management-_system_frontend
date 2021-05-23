@@ -20,7 +20,7 @@ export default function BookHall() {
             id, cusNic, bookedDate, noOfSeates, noOfTables, addedFeatures
         }
 
-        axios.post(" http://localhost:5000/bookedhalls/add", newBookHall).then(() => {
+        axios.post(" https://hotel-sobana.herokuapp.com/bookedhalls/add", newBookHall).then(() => {
         
             window.location = "/hall-manager/bookedHallView"
 

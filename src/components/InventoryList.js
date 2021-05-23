@@ -12,7 +12,7 @@ export default function AddInventory() {
 
     //fetching all the inventory rows from the database
     useEffect(() => {
-        axios.get("http://localhost:5000/inventory/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/inventory/").then((res) => {
             if (res.data.length > 0) {
                 setinventory(res.data);
             }

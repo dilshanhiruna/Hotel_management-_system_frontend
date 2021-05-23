@@ -20,7 +20,7 @@ const RoomTypeView = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:5000/roomType/get/${id}`).then((res) => {
+        axios.get(`https://hotel-sobana.herokuapp.com/roomType/get/${id}`).then((res) => {
            
                 setroomType(res.data)
                 console.log(res.data)
@@ -50,7 +50,7 @@ const RoomTypeView = () => {
             typeName, capacity, AC, FullBoardPrice, HalfBoardPrice, BedAndBreakfastPrice
         }
 
-        axios.put(`http://localhost:5000/roomType/update/${id}`, newRoomType).then(() => {
+        axios.put(`https://hotel-sobana.herokuapp.com/roomType/update/${id}`, newRoomType).then(() => {
 
             window.location = "/room-manager/roomType"
 
@@ -67,7 +67,7 @@ const RoomTypeView = () => {
         
         if (timesClicked > 1) {
 
-            axios.delete(`http://localhost:5000/roomType/delete/${id}`).then(() => {
+            axios.delete(`https://hotel-sobana.herokuapp.com/roomType/delete/${id}`).then(() => {
                 window.location = "/room-manager/roomType"
             }).catch((e) => {
     

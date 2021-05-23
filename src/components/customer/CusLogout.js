@@ -16,7 +16,7 @@ const Cuslogout = () => {
 
 
     async function logout(){
-        await axios.get("http://localhost:5000/customer/logout");
+        await axios.get("https://hotel-sobana.herokuapp.com/customer/logout");
         await getLoggedIn();
         history.push("/");
         

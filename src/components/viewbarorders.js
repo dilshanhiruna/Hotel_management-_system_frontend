@@ -9,7 +9,7 @@ export default function ViewBarOrders() {
 
     //fetching all the barorders rows from the database
     useEffect(() => {
-        axios.get("http://localhost:5000/orderItems/retrieve").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/orderItems/retrieve").then((res) => {
             if (res.data.length > 0) {
                 setorderitems(res.data);
             }

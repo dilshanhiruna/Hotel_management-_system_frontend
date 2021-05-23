@@ -13,7 +13,7 @@ function Delete() {
             const result = window.confirm("Do you really want to Reject Vacation?");
             if (result == true) {
 
-                axios.delete(`http://localhost:5000/vacation/reject/${id}`).then((res) => {
+                axios.delete(`https://hotel-sobana.herokuapp.com/vacation/reject/${id}`).then((res) => {
                     window.location = "/viewvacations";
                     alert("Vacation Reject");
                 }).catch(() => {

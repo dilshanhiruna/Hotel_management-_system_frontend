@@ -14,7 +14,7 @@ function ViewAll() {
     useEffect(() => {
         function getSalaries() {
             console.log("sucess");
-            axios.get("http://localhost:5000/salary//paidsalary").then((res) => {
+            axios.get("https://hotel-sobana.herokuapp.com/salary/paidsalary").then((res) => {
                 setSalary(res.data);
                 
             }).catch((err) => {

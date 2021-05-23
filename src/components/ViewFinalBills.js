@@ -17,7 +17,7 @@ function ViewFinalBill(){
 
 
     useEffect(() => {
-            axios.get("http://localhost:5000/FinalBill/ViewBills").then((res) => {
+            axios.get("https://hotel-sobana.herokuapp.com/FinalBill/ViewBills").then((res) => {
                 setBill(res.data);
             }).catch((err) => {
                 alert(err);

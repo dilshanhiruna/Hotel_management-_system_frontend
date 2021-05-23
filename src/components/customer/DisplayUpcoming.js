@@ -29,7 +29,7 @@ const DisplayUpcoming = () => {
 
     useEffect(() => {
         //fetching booking data from DB
-        axios.get(`http://localhost:5000/booking/get/${id}`).then(res => {
+        axios.get(`https://hotel-sobana.herokuapp.com/booking/get/${id}`).then(res => {
             setgetUpcoming(res.data)
             //setting the data that is fetched from the database 
             setPromoCode(res.data.promoCode)
@@ -58,7 +58,7 @@ const DisplayUpcoming = () => {
             promoCode, travelAgent, checkInDate, checkOutDate, noOfAdults, noOfChildren, cpackage, otherAccomodations, roomAllocation, price
         }
 
-        axios.post(`http://localhost:5000/booking/update/${id}`, updateBooking).then(() => {
+        axios.post(`https://hotel-sobana.herokuapp.com/booking/update/${id}`, updateBooking).then(() => {
             window.location = "/CusSideNav/cusUpBookings"
         }).catch((e) => {
             alert(e);
@@ -79,7 +79,7 @@ const DisplayUpcoming = () => {
         timesClicked++;
         
         if (timesClicked > 1) {
-            axios.delete(`http://localhost:5000/booking/delete/${id}`).then(() => {
+            axios.delete(`https://hotel-sobana.herokuapp.com/booking/delete/${id}`).then(() => {
                 window.location = "/CusSideNav/cusUpBookings"
                 timesClicked=0
             }).catch((e) => {

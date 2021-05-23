@@ -22,7 +22,7 @@ export default function AddBarInventory() {
     useEffect(() => {
 
 
-        axios.get("http://localhost:5000/supplier/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/supplier/").then((res) => {
             if (res.data.length > 0) {
                 setgetSupplier(res.data.map(supplier => supplier.name))
             }

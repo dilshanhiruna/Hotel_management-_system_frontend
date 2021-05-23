@@ -22,7 +22,7 @@ function ViewOne() {
     // console.log("find");
 
     useEffect(() => {
-        axios.get(`http://localhost:5000//salary/get/${id}`).then((res) => {
+        axios.get(`https://hotel-sobana.herokuapp.com//salary/get/${id}`).then((res) => {
             setOneSalary(res.data);
             setEmail(res.data.fname);
             setAccno(res.data.lname);

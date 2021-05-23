@@ -73,8 +73,8 @@ function Popup(){
                 }
         
                 
-                    axios.post("http://localhost:5000/FinalBill/AddBill", newBill).then(() => {
-                        axios.put(`http://localhost:5000/booking/PassCus/${id}`).then(()=>{
+                    axios.post("https://hotel-sobana.herokuapp.com/FinalBill/AddBill", newBill).then(() => {
+                        axios.put(`https://hotel-sobana.herokuapp.com/booking/PassCus/${id}`).then(()=>{
                             window.location = "/front-office-manager/FinalBill"
                         alert("Final Bill Create Successfuly");
                         })
@@ -83,7 +83,7 @@ function Popup(){
                         alert(err);
                     })
 
-                    // axios.put(`http://localhost:5000/booking/PassCus/${id}`).then(()=>{
+                    // axios.put(`https://hotel-sobana.herokuapp.com/booking/PassCus/${id}`).then(()=>{
 
                     // }).catch((err)=>{
                     //     alert(err);
@@ -106,7 +106,7 @@ function Popup(){
 
     //Find user Details
     useEffect(() => {
-        axios.get(`http://localhost:5000/booking/findOne/${id}`).then((res) => {
+        axios.get(`https://hotel-sobana.herokuapp.com/booking/findOne/${id}`).then((res) => {
 
         if(res.data.length === 0){
             window.location = "/front-office-manager/FinalBill"
@@ -140,7 +140,7 @@ function Popup(){
 
     //Find User's Bar Bill
     useEffect(() => {
-        axios.get(`http://localhost:5000/Meal_Order/Retrieve/${id}`).then((res) => {
+        axios.get(`https://hotel-sobana.herokuapp.com/Meal_Order/Retrieve/${id}`).then((res) => {
         if(res.data.length === 0){
 
         }else{

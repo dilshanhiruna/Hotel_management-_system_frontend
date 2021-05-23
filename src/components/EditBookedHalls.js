@@ -21,7 +21,7 @@ export default function EditBookHall() {
     useEffect(() => {
     
      
-        axios.get(`http://localhost:5000/bookedhalls/get/${id}`).then(res => {
+        axios.get(`https://hotel-sobana.herokuapp.com/bookedhalls/get/${id}`).then(res => {
             setBookedHalls(res.data.BookedHalls)
             console.log(res.data.BookedHalls)
             setID(res.data.BookedHalls.id)
@@ -53,7 +53,7 @@ export default function EditBookHall() {
             hallid, cusNic, bookedDate, bookedDate, noOfSeates, noOfTables, addedFeatures
         }
 
-        axios.put(`http://localhost:5000/bookedhalls/update/${id}`, newHall).then(() => {
+        axios.put(`https://hotel-sobana.herokuapp.com/bookedhalls/update/${id}`, newHall).then(() => {
 
         }).catch((e) => {
             alert("error");
@@ -65,7 +65,7 @@ export default function EditBookHall() {
         timesClicked++;
         
         if (timesClicked > 1) {
-            axios.delete(`http://localhost:5000/bookedhalls/delete/${id}`).then(() => {
+            axios.delete(`https://hotel-sobana.herokuapp.com/bookedhalls/delete/${id}`).then(() => {
                 window.location = "/hall-manager/bookedHallView"
                 timesClicked=0
             }).catch((e) => {

@@ -57,7 +57,7 @@ const Register = () => {
                     passwordVerify,
                 };
 
-                await axios.post("http://localhost:5000/customer/add", registerData);
+                await axios.post("https://hotel-sobana.herokuapp.com/customer/add", registerData);
                 await getLoggedIn();
                 history.push("/");
 

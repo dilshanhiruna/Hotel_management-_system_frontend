@@ -14,7 +14,7 @@ function Delet() {
             const result = window.confirm("Do you really want to Decline?");
             if (result == true) {
 
-                axios.delete(`http://localhost:5000/booking/delete/${id}`).then((res) => {
+                axios.delete(`https://hotel-sobana.herokuapp.com/booking/delete/${id}`).then((res) => {
                     window.location = "/front-office-manager/request";
                     alert("Decline Requset Success");
                 }).catch((err) => {

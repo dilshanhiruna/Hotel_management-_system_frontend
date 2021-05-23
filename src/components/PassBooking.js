@@ -12,7 +12,7 @@ function ViewPassBookings() {
 
     useEffect(() => {
         function ViewRequest() {
-            axios.get("http://localhost:5000/booking/ViewBookings").then((res) => {
+            axios.get("https://hotel-sobana.herokuapp.com/booking/ViewBookings").then((res) => {
                 setRequest(res.data);
             }).catch((err) => {
                 alert(err);

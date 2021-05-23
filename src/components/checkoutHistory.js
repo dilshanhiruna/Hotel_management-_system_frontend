@@ -11,7 +11,7 @@ const CheckoutHistory = ({ POP }) => {
 
     useEffect(() => {
         //fetching CHECKOUT HISTORY data from the DB
-        axios.get("http://localhost:5000/checkout/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/checkout/").then((res) => {
             if (res.data.length > 0) {
                 sethistory(res.data);
             }

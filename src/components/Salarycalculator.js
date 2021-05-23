@@ -28,7 +28,7 @@ function AddSalary() {
             
         }
 
-        axios.post("http://localhost:5000/salary/addsalary", newSalary).then(() => {
+        axios.post("https://hotel-sobana.herokuapp.com/salary/addsalary", newSalary).then(() => {
             window.location = "/paidsalary"
             alert("Paid salary details Added To Database Successfuly");
         }).catch((err) => {

@@ -13,7 +13,7 @@ function Delet() {
             const result = window.confirm("Do you really want to Delete?");
             if (result == true) {
 
-                axios.delete(`http://localhost:5000/Travel_Agency/delete/${id}`).then((res) => {
+                axios.delete(`https://hotel-sobana.herokuapp.com/Travel_Agency/delete/${id}`).then((res) => {
                     console.log(res);
                     window.location = "/front-office-manager/viewAllAgencies";
                     alert("Delete Success");

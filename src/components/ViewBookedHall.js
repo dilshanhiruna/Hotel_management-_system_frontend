@@ -11,7 +11,7 @@ export default function BookedHallView() {
 
     //fetching all the BookedHalls rows from the database
     useEffect(() => {
-        axios.get("http://localhost:5000/bookedhalls/view/").then((res) => {
+        axios.get("https://hotel-sobana.herokuapp.com/bookedhalls/view/").then((res) => {
             if (res.data.length > 0) {
                 setBookedHalls(res.data);
             }

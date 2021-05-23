@@ -14,7 +14,7 @@ function ViewAll() {
 
     useEffect(() => {
         function getAgent() {
-            axios.get("http://localhost:5000/Travel_Agency/Retrieve").then((res) => {
+            axios.get("https://hotel-sobana.herokuapp.com/Travel_Agency/Retrieve").then((res) => {
                 setAgent(res.data);
             }).catch((err) => {
                 alert(err);

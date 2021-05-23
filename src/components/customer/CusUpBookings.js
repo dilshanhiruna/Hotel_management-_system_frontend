@@ -13,7 +13,7 @@ export default function UpBookings() {
     const [upBookings, setUpBookings] = useState([]);
 
     async function getUpBookings(){
-        const UpBookingRes = await axios.get("http://localhost:5000/booking/getUp");
+        const UpBookingRes = await axios.get("https://hotel-sobana.herokuapp.com/booking/getUp");
         setUpBookings(UpBookingRes.data);
     }
 

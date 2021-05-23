@@ -14,7 +14,7 @@ const InventoryCheckout = () => {
 
   useEffect(() => {
     //fetching all inventory data from the database
-    axios.get("http://localhost:5000/inventory/").then((res) => {
+    axios.get("https://hotel-sobana.herokuapp.com/inventory/").then((res) => {
       if (res.data.length > 0) {
         setinventory(res.data);
       }
@@ -98,7 +98,7 @@ const InventoryCheckout = () => {
             const total = parseInt(inventory[x].quantity) - parseInt(selected[index].selectedUnits);
             const newStockvalue = { total };
             //updating the new inventory stock quantity in the Database
-            axios.put(`http://localhost:5000/inventory/updatestock/${id}`, newStockvalue).then(() => {
+            axios.put(`https://hotel-sobana.herokuapp.com/inventory/updatestock/${id}`, newStockvalue).then(() => {
 
             }).catch((e) => {
               alert("error");
@@ -122,7 +122,7 @@ const InventoryCheckout = () => {
               name, model, sku, category, to, description, quantity, unit_price, total_price, date
             }
             //sending all checkout data including items sold and other information to the database
-            axios.post(" http://localhost:5000/checkout/add", newItem).then(() => {
+            axios.post(" https://hotel-sobana.herokuapp.com/checkout/add", newItem).then(() => {
               setselected([]);
               setto("")
               setdescription("")

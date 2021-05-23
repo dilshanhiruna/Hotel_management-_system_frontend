@@ -27,7 +27,7 @@ function AddAgencies() {
 
         }
 
-        axios.post("http://localhost:5000/Travel_Agency/add", newAgencies).then(() => {
+        axios.post("https://hotel-sobana.herokuapp.com/Travel_Agency/add", newAgencies).then(() => {
             window.location = "/front-office-manager/viewAllAgencies"
             alert("Agencies Added Successfuly");
         }).catch((err) => {
