@@ -53,6 +53,7 @@ export default function Sidenav() {
 
             <Link to="/inventory-manager/suppliers">Suppliers</Link>
             <Link to="/inventory-manager/checkout">Checkout</Link>
+            <Link to="/inventory-manager/saleschart">Sales Chart</Link>
 
 
         </div>
