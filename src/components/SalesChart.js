@@ -32,14 +32,13 @@ const SalesChart = () => {
         console.log(e);
       });
   });
-
+  
   history.map((date) => {
     var DATE = date.date;
-
     let extractDate = DATE.substring(3, 5);
-    console.log("extractDate");
+    console.log(extractDate);
     if (extractDate === "01") {
-      Jan += 1;
+      Jan = Jan + 1;
     }
     if (extractDate === "02") {
       Feb += 1;
@@ -99,7 +98,7 @@ const SalesChart = () => {
             ],
             datasets: [
               {
-                label: "votes",
+                label: "Quantity Sold",
                 data: [
                   Jan,
                   Feb,
