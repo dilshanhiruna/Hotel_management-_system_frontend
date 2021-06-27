@@ -31,9 +31,8 @@ const SalesChart = () => {
       .catch((e) => {
         console.log(e);
       });
+    history.map(countSales);
   }, [history]);
-
-  history.map(countSales);
 
   function countSales(data) {
     var date = data.date;
@@ -134,6 +133,7 @@ const SalesChart = () => {
             ],
           }}
           height={80}
+          scales={{ y: { min: 0 } }}
         />
       </div>
     </div>
