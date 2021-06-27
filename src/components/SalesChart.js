@@ -32,11 +32,13 @@ const SalesChart = () => {
         console.log(e);
       });
   });
-  
+
   history.map((date) => {
     var DATE = date.date;
     let extractDate = DATE.substring(3, 5);
+    console.log(DATE);
     console.log(extractDate);
+
     if (extractDate === "01") {
       Jan = Jan + 1;
     }
