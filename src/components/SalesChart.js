@@ -19,21 +19,6 @@ const SalesChart = () => {
     Nov = 0,
     Dec = 0;
 
-  useEffect(() => {
-    //fetching CHECKOUT HISTORY data from the DB
-    axios
-      .get("https://hotel-sobana.herokuapp.com/checkout/")
-      .then((res) => {
-        if (res.data.length > 0) {
-          sethistory(res.data);
-        }
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-    getDates();
-  });
-
   const getDates = () => {
     history.map((date) => {
       var DATE = date.date;
@@ -80,6 +65,21 @@ const SalesChart = () => {
       return 0;
     });
   };
+
+  useEffect(() => {
+    //fetching CHECKOUT HISTORY data from the DB
+    axios
+      .get("https://hotel-sobana.herokuapp.com/checkout/")
+      .then((res) => {
+        if (res.data.length > 0) {
+          sethistory(res.data);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+    getDates();
+  });
 
   return (
     <div className="display-box">
