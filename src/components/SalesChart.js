@@ -32,7 +32,7 @@ const SalesChart = () => {
         console.log(e);
       });
     history.map(countSales);
-  }, [history]);
+  });
 
   function countSales(data) {
     var date = data.date;
