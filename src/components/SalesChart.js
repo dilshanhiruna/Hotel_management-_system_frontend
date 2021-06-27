@@ -26,6 +26,7 @@ const SalesChart = () => {
       .then((res) => {
         if (res.data.length > 0) {
           sethistory(res.data);
+          getDates();
         }
       })
       .catch((e) => {
@@ -33,50 +34,52 @@ const SalesChart = () => {
       });
   });
 
-  history.map((date) => {
-    var DATE = date.date;
-    let extractDate = DATE.substring(0, 2);
-    console.log(DATE);
-    console.log(extractDate);
+  const getDates = () => {
+    history.map((date) => {
+      var DATE = date.date;
+      let extractDate = DATE.substring(0, 2);
+      console.log(DATE);
+      console.log(extractDate);
 
-    if (extractDate === "01") {
-      Jan = Jan + 1;
-    }
-    if (extractDate === "02") {
-      Feb += 1;
-    }
-    if (extractDate === "03") {
-      Mar += 1;
-    }
-    if (extractDate === "04") {
-      Apr += 1;
-    }
-    if (extractDate === "05") {
-      May += 1;
-    }
-    if (extractDate === "06") {
-      Jun += 1;
-    }
-    if (extractDate === "07") {
-      Jul += 1;
-    }
-    if (extractDate === "08") {
-      Aug += 1;
-    }
-    if (extractDate === "09") {
-      Sep += 1;
-    }
-    if (extractDate === "10") {
-      Oct += 1;
-    }
-    if (extractDate === "11") {
-      Nov += 1;
-    }
-    if (extractDate === "12") {
-      Dec += 1;
-    }
-    return 0;
-  });
+      if (extractDate === "01") {
+        Jan = Jan + 1;
+      }
+      if (extractDate === "02") {
+        Feb += 1;
+      }
+      if (extractDate === "03") {
+        Mar += 1;
+      }
+      if (extractDate === "04") {
+        Apr += 1;
+      }
+      if (extractDate === "05") {
+        May += 1;
+      }
+      if (extractDate === "06") {
+        Jun += 1;
+      }
+      if (extractDate === "07") {
+        Jul += 1;
+      }
+      if (extractDate === "08") {
+        Aug += 1;
+      }
+      if (extractDate === "09") {
+        Sep += 1;
+      }
+      if (extractDate === "10") {
+        Oct += 1;
+      }
+      if (extractDate === "11") {
+        Nov += 1;
+      }
+      if (extractDate === "12") {
+        Dec += 1;
+      }
+      return 0;
+    });
+  };
 
   return (
     <div className="display-box">
