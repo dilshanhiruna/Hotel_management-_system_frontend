@@ -31,8 +31,9 @@ const SalesChart = () => {
       .catch((e) => {
         console.log(e);
       });
-    history.map(countSales);
   });
+
+  history.map(countSales);
 
   function countSales(data) {
     var date = data.date;
@@ -79,7 +80,7 @@ const SalesChart = () => {
     <div className="display-box">
       <div className="header-box-sup"> Sales Chart</div>
       <div>
-        <Line
+        <Bar
           data={{
             labels: [
               "Jan",
