@@ -35,7 +35,7 @@ const SalesChart = () => {
 
   history.map((date) => {
     var DATE = date.date;
-    let extractDate = DATE.substring(3, 5);
+    let extractDate = DATE.substring(0, 2);
     console.log(DATE);
     console.log(extractDate);
 
