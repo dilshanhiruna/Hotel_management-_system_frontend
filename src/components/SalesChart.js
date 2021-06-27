@@ -33,11 +33,11 @@ const SalesChart = () => {
       });
   });
 
-  history.map(countSales);
+  history.map((date) => {
+    var DATE = date.date;
 
-  function countSales(data) {
-    var date = data.date;
-    let extractDate = date.substring(3, 5);
+    let extractDate = DATE.substring(3, 5);
+    console.log("extractDate");
     if (extractDate === "01") {
       Jan += 1;
     }
@@ -74,7 +74,8 @@ const SalesChart = () => {
     if (extractDate === "12") {
       Dec += 1;
     }
-  }
+    return 0;
+  });
 
   return (
     <div className="display-box">
