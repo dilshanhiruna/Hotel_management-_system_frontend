@@ -2,19 +2,117 @@ import React, { useState, useEffect } from "react";
 import "./Suppliers.css";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 
 const SalesChart = () => {
+  const [history, sethistory] = useState([]);
+  var Jan = 0,
+    Feb = 0,
+    Mar = 0,
+    Apr = 0,
+    May = 0,
+    Jun = 0,
+    Jul = 0,
+    Aug = 0,
+    Sep = 0,
+    Oct = 0,
+    Nov = 0,
+    Dec = 0;
+
+  useEffect(() => {
+    //fetching CHECKOUT HISTORY data from the DB
+    axios
+      .get("https://hotel-sobana.herokuapp.com/checkout/")
+      .then((res) => {
+        if (res.data.length > 0) {
+          sethistory(res.data);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [history]);
+
+  history.map(countSales);
+
+  function countSales(data) {
+    var date = data.date;
+    let extractDate = date.substring(3, 5);
+    if (extractDate === "01") {
+      Jan += 1;
+    }
+    if (extractDate === "02") {
+      Feb += 1;
+    }
+    if (extractDate === "03") {
+      Mar += 1;
+    }
+    if (extractDate === "04") {
+      Apr += 1;
+    }
+    if (extractDate === "05") {
+      May += 1;
+    }
+    if (extractDate === "06") {
+      Jun += 1;
+    }
+    if (extractDate === "07") {
+      Jul += 1;
+    }
+    if (extractDate === "08") {
+      Aug += 1;
+    }
+    if (extractDate === "09") {
+      Sep += 1;
+    }
+    if (extractDate === "10") {
+      Oct += 1;
+    }
+    if (extractDate === "11") {
+      Nov += 1;
+    }
+    if (extractDate === "12") {
+      Dec += 1;
+    }
+  }
+
   return (
     <div className="display-box">
-      <div className="header-box-sup"> Suppliers</div>
+      <div className="header-box-sup"> Sales Chart</div>
       <div>
-        <Bar
+        <Line
           data={{
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+            ],
             datasets: [
               {
-                lable: "# of votes",
-                data: [12, 19, 3, 5, 2, 3],
+                label: "votes",
+                data: [
+                  Jan,
+                  Feb,
+                  Mar,
+                  Apr,
+                  May,
+                  Jun,
+                  Jul,
+                  Aug,
+                  Sep,
+                  Oct,
+                  Nov,
+                  Dec,
+                ],
                 backgroundColor: [
                   "rgba(255, 99, 132, 0.2)",
                   "rgba(54, 162, 235, 0.2)",
