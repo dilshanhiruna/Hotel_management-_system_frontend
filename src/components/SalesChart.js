@@ -26,12 +26,12 @@ const SalesChart = () => {
       .then((res) => {
         if (res.data.length > 0) {
           sethistory(res.data);
-          getDates();
         }
       })
       .catch((e) => {
         console.log(e);
       });
+    getDates();
   });
 
   const getDates = () => {
